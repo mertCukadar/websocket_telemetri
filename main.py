@@ -9,6 +9,11 @@ BAUDRATE = 9600
 # FastAPI başlat
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return{"gello" : "alaz"}
+
+
 # CORS izinleri (Next.js gibi farklı bir porttan erişim için)
 app.add_middleware(
     CORSMiddleware,
